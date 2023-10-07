@@ -25,11 +25,6 @@ app.get('/admin', (req, res) => {
   res.send('Admin Homepage')
 })
 
-//http://localhost:3000/name
-app.get('/name', (req, res) => {
-  res.send('C0867033 - Ashwin Rajput')
-})
-
 //http://localhost:3000/user/100
 app.get("/user/:id", (req, res)=> {
       res.send(`User ID: ${req.params.id}`);
