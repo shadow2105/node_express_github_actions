@@ -11,15 +11,18 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 
 //http://localhost:3000/
 app.get('/', function (req, res) {
-    res.send("<h1>Home Page</h1>")
+  res.send("Index");
 })
 
 //http://localhost:3000/profile
-app.post('/profile', (req, res) => {
-  console.log(req.body)
-  res.json(req.body)
+app.get('/profile', (req, res) => {
+  res.send("<h1>Profile Page</h1>");
+  // res.json(req.body);
+  
 })
-
+app.get('/name', (req, res) => {
+  res.sendFile(__dirname + "./index.html");
+})
 //http://localhost:3000/admin
 app.get('/admin', (req, res) => {
   res.send('Admin Homepage')
@@ -27,7 +30,9 @@ app.get('/admin', (req, res) => {
 
 //http://localhost:3000/user/100
 app.get("/user/:id", (req, res)=> {
-      res.send(`User ID: ${req.params.id}`);
+  // console.log("User id here", req);
+      res.send(`Student ID: ${req.params.id}`);
+     
     }
 )
 
